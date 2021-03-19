@@ -1,20 +1,112 @@
 <html>
-<title>
+<head>
+<style>
+a:link{
+text-decoration: none;
+color:white;
+}
 
-</title>
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
 <body bgcolor="black" style="color:white;font-family:Consolas;">
 <center>
 <h1 style="margin:50px;">Ali Rıza Fırat's Blog</h1>
+<br>
+
 </center>
+<a id="backbut" onclick="disp(0);"><div style="margin:auto;border:2px solid white;padding:5px;width:120px;"><center>Geri dön...</center></div></a>
+<!--start-->
+<div id="contents">
 
 
+<div style="margin-left:10%;margin-right:10%;border:2px solid white;margin-top:30px;margin-bottom:30px;">
+<div style="margin:5px;border:2px solid white;padding:5px;">
+baslikrep
+
+</div>
+<div style="margin:5px;border:2px solid white;padding:5px;">
+aciklamarep
+
+</div>
+<a onclick="disp(1);">
+<div style="margin-top:5px;margin-bottom:5px;width:140px;border:2px solid white;margin-right:5px;margin-left:auto;padding:5px;">
+Devamını Oku..
+
+</div></a>
+</div>
 
 
+</div>
+<!--split-->
+
+<div id="cont" >
+
+</div>
+
+
+document.URL.replace("https://arfblog.github.io/","")
+<!--end-->
 <footer><center>Powered by Ali Rıza Fırat<br>
-<a href="//www.dmca.com/Protection/Status.aspx?ID=bbf34686-bd6d-4bb7-8e33-efff94a49731" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-02.png?ID=bbf34686-bd6d-4bb7-8e33-efff94a49731"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
- <!--<a href="/dmca-validation.html">-->
+
+<a href="https://www.sopsy.com/d/21422/list"><img src="donate.png" width="160px" height="60px"></a>
+
+<a href="https://www.dmca.com/Protection/Status.aspx?ID=bbf34686-bd6d-4bb7-8e33-efff94a49731" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_27_120.png?ID=bbf34686-bd6d-4bb7-8e33-efff94a49731"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+
 </center>
 </footer>
+<script>
+var ur = document.URL.replace("https://arfblog.github.io/")
+if(ur == ""){
+document.getElementById("backbut").style.display = "none";
+document.getElementById("cont").style.display = "none";
+}else{
+var getHTML = function ( url, callback ) {
+
+	// Feature detection
+	if ( !window.XMLHttpRequest ) return;
+
+	// Create new request
+	var xhr = new XMLHttpRequest();
+
+	// Setup callback
+	xhr.onload = function() {
+		if ( callback && typeof( callback ) === 'function' ) {
+			callback( this.responseXML );
+		}
+	}
+
+	// Get the HTML
+	xhr.open( 'GET', url );
+	xhr.responseType = 'document';
+	xhr.send();
+
+};
+  
+  getHTML( '/posts/'+ur, function (response) {
+	document.getElementById("cont").innerHTML = response.documentElement.innerHTML;
+});
+document.getElementById("backbut").style.display = "inline";
+document.getElementById("cont").style.display = "inline";
+}
+
+function disp(gh){
+var selection = gh;
+var x = document.getElementById("contents")
+var y = document.getElementById("backbut")
+if(selection == 1){
+x.style.display = "none";
+y.style.display = "inline";
+document.getElementById("cont").style.display = "inline";
+}else{
+x.style.display = "inline";
+y.style.display = "none";
+document.getElementById("cont").style.display = "none";
+}
+}
+</script>
+
+
 </body>
 </html>
