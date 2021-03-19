@@ -57,6 +57,22 @@ Devamını Oku..
 </center>
 </footer>
 <script>
+function disp(gh){
+var selection = gh;
+var x = document.getElementById("contents")
+var y = document.getElementById("backbut")
+if(selection == 1){
+x.style.display = "none";
+y.style.display = "inline";
+document.getElementById("cont").style.display = "inline";
+}else{
+x.style.display = "inline";
+y.style.display = "none";
+document.getElementById("cont").style.display = "none";
+}
+}
+document.getElementById("backbut").style.display = "none";
+document.getElementById("cont").style.display = "none";
 var ur = document.URL.replace("https://arfblog.github.io/","");
 if(!ur){
 document.getElementById("backbut").style.display = "none";
@@ -95,20 +111,7 @@ document.getElementById("backbut").style.display = "inline";
 document.getElementById("cont").style.display = "inline";
 }
 
-function disp(gh){
-var selection = gh;
-var x = document.getElementById("contents")
-var y = document.getElementById("backbut")
-if(selection == 1){
-x.style.display = "none";
-y.style.display = "inline";
-document.getElementById("cont").style.display = "inline";
-}else{
-x.style.display = "inline";
-y.style.display = "none";
-document.getElementById("cont").style.display = "none";
-}
-}
+
 </script>
 
 <!--<a href="/posts/test"><a href="/donate.png">-->
