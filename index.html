@@ -46,7 +46,7 @@ var getHTML = function ( url, callback ) {
 
 };
 getHTML( '/list.html', function (response) {
-	var asd = response.documentElement.innerHTML.split("\n");
+	asd = response.documentElement.innerHTML.split("\n");
 	var i= 0;
 	for(i=(page*5)-5;i<((page*5)-1);i++){
 	document.write(asd[i]);
