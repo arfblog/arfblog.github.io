@@ -109,7 +109,8 @@ document.getElementById("cont").style.display = "none";
 getHTML( '/posts/'+selection+'.html', function (response) {
 	document.getElementById("cont").innerHTML = response.documentElement.innerHTML;
 });
-document.getElementById("backbut").style.display = "inline";
+x.style.display = "none";
+y.style.display = "inline";
 document.getElementById("cont").style.display = "inline";
 }
 }
