@@ -107,7 +107,7 @@ getHTML( '/list.html', function (response) {
 		listpages();
 		listcontents();
 	}
-	listpages();
+	pg(page);
 	
 </script>
 <!--end-->
@@ -142,10 +142,12 @@ var x = document.getElementById("contents")
 var y = document.getElementById("backbut")
 if(selection == 1){
 x.style.display = "none";
+	document.getElementById("contents").style.display = "none";
 y.style.display = "inline";
 document.getElementById("cont").style.display = "inline";
 }else if(selection == 0){
 x.style.display = "inline";
+	document.getElementById("contents").style.display = "inline";
 y.style.display = "none";
 document.getElementById("cont").style.display = "none";
 }else{
@@ -153,6 +155,7 @@ getHTML( '/posts/'+selection+'.html', function (response) {
 	document.getElementById("cont").innerHTML = response.documentElement.innerHTML;
 });
 x.style.display = "none";
+	document.getElementById("contents").style.display = "none";
 y.style.display = "inline";
 document.getElementById("cont").style.display = "inline";
 }
@@ -160,7 +163,7 @@ document.getElementById("cont").style.display = "inline";
 
 
 
-
+pg(page);
 </script>
 
 <!--<a href="/posts/test"><a href="/donate.png">-->
