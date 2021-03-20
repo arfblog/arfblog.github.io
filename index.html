@@ -100,14 +100,7 @@ getHTML( '/list.html', function (response) {
 	return 0;
 }
 	listcontents();
-	var ii = 0;
-	for(ii = 1;ii<Math.floor(asd.length/4);ii++){
-		if(ii == page){
-		document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" class="active">'+ii+'</a>';
-		}else{
-	 document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';
-		}
-	}
+	
 	function listpages(){
 	var ii = 0;
 	for(ii = 1;ii<Math.floor(asd.length/4);ii++){
@@ -172,7 +165,14 @@ document.getElementById("cont").style.display = "inline";
 return 0;
 }
 
-
+var ii = 0;
+	for(ii = 1;ii<Math.floor(asd.length/4);ii++){
+		if(ii == page){
+		document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" class="active">'+ii+'</a>';
+		}else{
+	 document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';
+		}
+	}
 
 
 </script>
