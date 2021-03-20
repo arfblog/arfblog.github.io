@@ -49,7 +49,7 @@ getHTML( '/list.html', function (response) {
 	asd = response.documentElement.innerHTML.split("\n");
 	var i= 0;
 	for(i=(page*5)-5;i<((page*5)-1);i++){
-	document.getElementById("cont").innerHTML += (asd[i]);
+	document.getElementById("contents").innerHTML += (asd[i]);
 	}
 });
 </script>
