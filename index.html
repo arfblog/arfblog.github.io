@@ -46,7 +46,7 @@ var getHTML = function ( url, callback ) {
 
 };
 getHTML( '/list.html', function (response) {
-	asd = response.body.innerHTML.split("\n");
+	asd = response.body.innerHTML.split("yazilararasiayrac");
 	var i= 0;
 	for(i=(page*5)-5;i<((page*5)-1);i++){
 	if(asd[i] != undefined){document.getElementById("contents").innerHTML += (asd[i]);}
