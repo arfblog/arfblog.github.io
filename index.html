@@ -122,14 +122,14 @@ getHTML( '/list.html', function (response) {
 		return 0;
 	}
 	
-document.getElementById("pages").style.display = "inline";
+document.getElementById("pages").style.display = "inline-block";
 document.getElementById("backbut").style.display = "none";
 document.getElementById("cont").style.display = "none";
 var ur = document.URL.replace("https://arfblog.github.io/?post=","");
 if(ur == "https://arfblog.github.io/"){
 document.getElementById("backbut").style.display = "none";
 document.getElementById("cont").style.display = "none";
-	document.getElementById("pages").style.display = "inline";
+	document.getElementById("pages").style.display = "inline-block";
 }else{
 getHTML( '/posts/'+ur+'.html', function (response) {
 	document.getElementById("cont").innerHTML = response.documentElement.innerHTML;
@@ -152,7 +152,7 @@ y.style.display = "inline";
 document.getElementById("cont").style.display = "inline";
 }else if(selection == 0){
 x.style.display = "inline";
-document.getElementById("pages").style.display = "inline";
+document.getElementById("pages").style.display = "inline-block";
 y.style.display = "none";
 document.getElementById("cont").style.display = "none";
 }else{
