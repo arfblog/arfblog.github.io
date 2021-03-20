@@ -75,6 +75,7 @@ getHTML( '/list.html', function (response) {
 	if(asd[i] != undefined){document.getElementById("contents").innerHTML += (asd[i]);}
 	}
 	});
+	return 0;
 }
 	listcontents();
 	</script>
@@ -98,12 +99,14 @@ getHTML( '/list.html', function (response) {
 	 document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';
 		}
 	}
+	return 0;
 	}
 	function pg(pgno){
 		document.getElementById("pages").innerHTML = " ";
 		page = pgno;
 		listcontents();
 		listpages();
+		return 0;
 	}
 	
 </script>
@@ -161,6 +164,7 @@ x.style.display = "none";
 y.style.display = "inline";
 document.getElementById("cont").style.display = "inline";
 }
+return 0;
 }
 
 
