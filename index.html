@@ -57,20 +57,7 @@ Devamını Oku..
 </center>
 </footer>
 <script>
-function disp(gh){
-var selection = gh;
-var x = document.getElementById("contents")
-var y = document.getElementById("backbut")
-if(selection == 1){
-x.style.display = "none";
-y.style.display = "inline";
-document.getElementById("cont").style.display = "inline";
-}else{
-x.style.display = "inline";
-y.style.display = "none";
-document.getElementById("cont").style.display = "none";
-}
-}
+
 document.getElementById("backbut").style.display = "none";
 document.getElementById("cont").style.display = "none";
 var ur = document.URL.replace("https://arfblog.github.io/?post=","");
@@ -103,7 +90,26 @@ var getHTML = function ( url, callback ) {
 	xhr.send();
 
 };
-  
+  function disp(gh){
+var selection = gh;
+var x = document.getElementById("contents")
+var y = document.getElementById("backbut")
+if(selection == 1){
+x.style.display = "none";
+y.style.display = "inline";
+document.getElementById("cont").style.display = "inline";
+}else if(selection == 0){
+x.style.display = "inline";
+y.style.display = "none";
+document.getElementById("cont").style.display = "none";
+}else{
+getHTML( '/posts/'+selection+'.html', function (response) {
+	document.getElementById("cont").innerHTML = response.documentElement.innerHTML;
+});
+document.getElementById("backbut").style.display = "inline";
+document.getElementById("cont").style.display = "inline";
+}
+}
   getHTML( '/posts/'+ur+'.html', function (response) {
 	document.getElementById("cont").innerHTML = response.documentElement.innerHTML;
 });
