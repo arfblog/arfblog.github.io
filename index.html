@@ -45,15 +45,26 @@ var getHTML = function ( url, callback ) {
 	xhr.send();
 
 };
+	function pg(pgno){
+	page = pgno
+	}
 getHTML( '/list.html', function (response) {
 	asd = response.body.innerHTML.split("<b>articsplitter</b>");
 	var i= 0;
 	for(i=(page*5)-5;i<((page*5)-1);i++){
 	if(asd[i] != undefined){document.getElementById("contents").innerHTML += (asd[i]);}
 	}
-});
+	});
+	</script>
+	<center><div class="pagination">
+		 <a href="#" class="active">1</a>
+	<script>
+	var ii = 0;
+	for(ii = 1;ii<Math.floor(asd.length/4);ii++){
+	 document.getElementByClass("pagination").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';
+	}
 </script>
-
+</div></center>
 
 </div>
 <!--split-->
