@@ -93,11 +93,12 @@ getHTML( '/list.html', function (response) {
 		if(ii == page){
 		document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" class="active">'+ii+'</a>';
 		}else{
-	 document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';}
+	 document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';
+		}
 	}
 	}
 	function pg(pgno){
-		document.getElementByClass("pagination").innerHTML = "";
+		document.getElementById("pagination").innerHTML = "";
 	page = pgno;
 		listpages();
 	}
