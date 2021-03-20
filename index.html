@@ -85,7 +85,7 @@ if(ur == "https://arfblog.github.io/"){
 document.getElementById("backbut").style.display = "none";
 document.getElementById("cont").style.display = "none";
 }else{
-getHTML( '/posts/'+selection+'.html', function (response) {
+getHTML( '/posts/'+ur+'.html', function (response) {
 	document.getElementById("cont").innerHTML = response.documentElement.innerHTML;
 });
 	document.getElementById("backbut").style.display = "inline";
