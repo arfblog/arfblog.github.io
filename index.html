@@ -21,42 +21,8 @@ color:white;
 <div id="contents">
 
 
-<div style="margin-left:10%;margin-right:10%;border:2px solid white;margin-top:30px;margin-bottom:30px;">
-<div style="margin:5px;border:2px solid white;padding:5px;">
-baslikrep
-
-</div>
-<div style="margin:5px;border:2px solid white;padding:5px;">
-aciklamarep
-
-</div>
-<a onclick="disp('test')">
-<div style="margin-top:5px;margin-bottom:5px;width:140px;border:2px solid white;margin-right:5px;margin-left:auto;padding:5px;">
-Devamını Oku..
-
-</div></a>
-</div>
-
-
-</div>
-<!--split-->
-
-<div id="cont" >
-
-</div>
-
-
-
-<!--end-->
-<footer><center>Powered by Ali Rıza Fırat<br>
-
-<a href="https://www.sopsy.com/d/21422/list"><img src="donate.png" width="160px" height="60px"></a>
-
-<a href="https://www.dmca.com/Protection/Status.aspx?ID=bbf34686-bd6d-4bb7-8e33-efff94a49731" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_27_120.png?ID=bbf34686-bd6d-4bb7-8e33-efff94a49731"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
-
-</center>
-</footer>
 <script>
+page = 1
 var getHTML = function ( url, callback ) {
 
 	// Feature detection
@@ -78,6 +44,36 @@ var getHTML = function ( url, callback ) {
 	xhr.send();
 
 };
+getHTML( '/list.html', function (response) {
+	var asd = response.documentElement.innerHTML.split("\n");
+	var i= 0;
+	for(i=(page*5)-5;i>((page*5)-1);i++){
+	document.write(asd[i]);
+	}
+});
+</script>
+
+
+</div>
+<!--split-->
+
+<div id="cont" >
+
+</div>
+
+
+
+<!--end-->
+<footer><center>Powered by Ali Rıza Fırat<br>
+
+<a href="https://www.sopsy.com/d/21422/list"><img src="donate.png" width="160px" height="60px"></a>
+
+<a href="https://www.dmca.com/Protection/Status.aspx?ID=bbf34686-bd6d-4bb7-8e33-efff94a49731" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_27_120.png?ID=bbf34686-bd6d-4bb7-8e33-efff94a49731"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+
+</center>
+</footer>
+<script>
+
 document.getElementById("backbut").style.display = "none";
 document.getElementById("cont").style.display = "none";
 var ur = document.URL.replace("https://arfblog.github.io/?post=","");
