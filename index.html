@@ -64,10 +64,8 @@ var getHTML = function ( url, callback ) {
 	xhr.send();
 
 };
-	function pg(pgno){
-		document.getElementByClass("pagination").innerHTML = "";
-	page = pgno;
-	}
+	
+	
 getHTML( '/list.html', function (response) {
 	asd = response.body.innerHTML.split("<b>articsplitter</b>");
 	var i= 0;
@@ -85,18 +83,27 @@ getHTML( '/list.html', function (response) {
 
 </div>
 
-<center><div class="pagination">
-	<script>
+<center><div id="pages" class="pagination">
+	
+</div></center>
+<script>
+	function listpages(){
 	var ii = 0;
 	for(ii = 1;ii<Math.floor(asd.length/4);ii++){
 		if(ii == page){
-		document.getElementByClassName("pagination").innerHTML += '<a onclick="pg('+ii+')" class="active">'+ii+'</a>';
+		document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" class="active">'+ii+'</a>';
 		}else{
-	 document.getElementByClassName("pagination").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';}
+	 document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';}
 	}
+	}
+	function pg(pgno){
+		document.getElementByClass("pagination").innerHTML = "";
+	page = pgno;
+		listpages();
+	}
+	listpages();
+	
 </script>
-</div></center>
-
 <!--end-->
 <footer><center>Powered by Ali Rıza Fırat<br>
 
