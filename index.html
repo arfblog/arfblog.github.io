@@ -103,9 +103,9 @@ getHTML( '/list.html', function (response) {
 	}
 	function pg(pgno){
 		document.getElementById("pages").innerHTML = " ";
-	page = pgno;
-		listpages();
+		page = pgno;
 		listcontents();
+		listpages();
 	}
 	
 </script>
@@ -164,16 +164,7 @@ document.getElementById("cont").style.display = "inline";
 
 
 </script>
-<script>
-	var ii = 0;
-	for(ii = 1;ii<Math.floor(asd.length/4);ii++){
-		if(ii == page){
-		document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" class="active">'+ii+'</a>';
-		}else{
-	 document.getElementById("pages").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';
-		}
-	}
-	</script>
+
 <!--<a href="/posts/test"><a href="/donate.png">-->
 </body>
 </html>
