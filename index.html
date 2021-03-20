@@ -65,7 +65,8 @@ var getHTML = function ( url, callback ) {
 
 };
 	function pg(pgno){
-	page = pgno
+		document.getElementByClass("pagination").innerHTML = "";
+	page = pgno;
 	}
 getHTML( '/list.html', function (response) {
 	asd = response.body.innerHTML.split("<b>articsplitter</b>");
@@ -76,11 +77,13 @@ getHTML( '/list.html', function (response) {
 	});
 	</script>
 	<center><div class="pagination">
-		 <a href="#" class="active">1</a>
 	<script>
 	var ii = 0;
 	for(ii = 1;ii<Math.floor(asd.length/4);ii++){
-	 document.getElementByClass("pagination").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';
+		if(ii == page){
+		document.getElementByClass("pagination").innerHTML += '<a onclick="pg('+ii+')" class="active">'+ii+'</a>';
+		}else{
+	 document.getElementByClass("pagination").innerHTML += '<a onclick="pg('+ii+')" >'+ii+'</a>';}
 	}
 </script>
 </div></center>
